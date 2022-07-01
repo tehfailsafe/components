@@ -20,10 +20,10 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/lib/index.ts"),
+      entry: path.resolve(__dirname, "src/index.ts"),
       name: "Components",
       formats: ["es", "umd"],
-      fileName: (format) => `my-lib.${format}.js`,
+      fileName: (format) => `components.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom", "tailwindcss"],
@@ -31,7 +31,6 @@ export default defineConfig({
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
-          "styled-components": "styled",
         },
       },
     },
