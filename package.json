@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "watch": "vite build --watch",
     "preview": "vite preview",
     "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\""
   },
@@ -14,12 +15,14 @@
   "module": "./dist/components.es.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "dist/*.css"
   ],
   "exports": {
     ".": {
       "import": "./dist/components.es.js",
       "require": "./dist/components.umd.js"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   }
 }
