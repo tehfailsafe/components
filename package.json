@@ -3,15 +3,23 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/tehfailsafe"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\""
   },
-  "typings": "./dist/index.d.ts",
+  "main": "./dist/components.umd.js",
+  "module": "./dist/components.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
-  ]
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/components.es.js",
+      "require": "./dist/components.umd.js"
+    }
+  }
 }
